@@ -18,9 +18,9 @@ class SendService implements SendServiceInterface
     /**
      * Send message
      * @param array $message
-     * @return bool
+     * @throws SendException
      */
-    public function send(array $message): bool
+    public function send(array $message): void
     {
         $data = json_encode($message);
         $curl = curl_init($this->url);
@@ -32,6 +32,10 @@ class SendService implements SendServiceInterface
             'Content-Length: ' . strlen($data)
         ]);
 
-        return curl_exec($curl) === 'ok';
+        $result = curl_exec($curl);
+
+        if ($result !== 'ok') {
+            throw new SendException($result);
+        }
     }
 }

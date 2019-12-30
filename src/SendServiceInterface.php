@@ -11,7 +11,6 @@ interface SendServiceInterface
     /**
      * Send message
      * @param array $message
-     * @return bool
      */
-    public function send(array $message): bool;
+    public function send(array $message): void;
 }
