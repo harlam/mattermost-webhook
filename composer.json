@@ -1,15 +1,13 @@
 {
   "name": "harlam/mattermost-webhook",
   "type": "library",
-  "version": "1.0.0",
   "authors": [
     {
       "name": "harlam",
       "email": "harlamov.nikolay@yandex.ru"
     }
   ],
-  "license": "BSD-3-Clause",
-  "require": {},
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "harlam\\Mattermost\\": "src/"
